@@ -10,9 +10,9 @@ def open_website(context):
     #context.driver.get('https://shop.cureskin.com/')
 
 
-@when('Click Terms of Service')
-def click_search(context):
-    context.app.main_page.click_terms()
+@when('Click "Terms of Service"')
+def click_terms(context):
+    context.app.main_page.click_footer_terms()
 
     #context.driver.find_element(By.XPATH, "//a[@href='/policies/terms-of-service' and contains(@class,'list-menu__item--link')]").click()
 

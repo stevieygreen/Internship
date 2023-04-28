@@ -1,5 +1,6 @@
 from pages.main_page import MainPage
 from pages.terms_page import TermsPage
+from pages.header_page import HeaderPage
 
 class Application:
 
@@ -7,3 +8,4 @@ class Application:
         self.driver = driver
         self.main_page = MainPage(self.driver)
         self.terms_page = TermsPage(self.driver)
+        self.header_page = HeaderPage(self.driver)
