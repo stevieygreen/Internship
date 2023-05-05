@@ -33,7 +33,6 @@ def browser_init(context, test_name):
     ########### FIREFOX ################
     options = FirefoxOptions()
     options.headless = True
-    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
     context.driver = webdriver.Firefox(executable_path="geckodriver.exe", options=options)
     ###################################
 
