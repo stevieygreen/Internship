@@ -31,10 +31,10 @@ def browser_init(context, test_name):
     # ###################################
 
     ########### FIREFOX ################
-    options = FirefoxOptions()
-    options.headless = True
-    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
-    context.driver = webdriver.Firefox(executable_path="geckodriver.exe", options=options)
+    # options = FirefoxOptions()
+    # options.headless = True
+    # options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe" #for allure
+    # context.driver = webdriver.Firefox(executable_path="geckodriver.exe", options=options)
     ###################################
 
     # ########## BROWSERSTACK ################
@@ -56,6 +56,17 @@ def browser_init(context, test_name):
     # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
     # context.driver = webdriver.Remote(url, desired_capabilities=desired_cap)
     # #########################################
+
+    # ########## Mobile-Web Emulator ################
+    #
+    mobile_emulation = {"deviceName": "iPhone 12 Pro"}
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    context.driver = webdriver.Chrome(options=chrome_options)
+    # #########################################
+
+
+
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(5)
