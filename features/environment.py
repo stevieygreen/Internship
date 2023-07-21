@@ -23,11 +23,11 @@ def browser_init(context, test_name):
     """
 
     # ########### CHROME ################
-    # options = ChromeOptions()
-    # options.add_argument("--headless")
-    # options.add_argument("--window-size=1920,1080")
-    # options.add_argument("--start-maximized")
-    # context.driver = webdriver.Chrome(executable_path="chromedriver.exe", options=options)
+    options = ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--start-maximized")
+    context.driver = webdriver.Chrome(executable_path="chromedriver.exe", options=options)
     # ###################################
 
     ########### FIREFOX ################
@@ -59,14 +59,11 @@ def browser_init(context, test_name):
 
     # ########## Mobile-Web Emulator ################
     #
-    mobile_emulation = {"deviceName": "iPhone 12 Pro"}
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-    context.driver = webdriver.Chrome(options=chrome_options)
+    # mobile_emulation = {"deviceName": "iPhone 12 Pro"}
+    # chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    # context.driver = webdriver.Chrome(options=chrome_options)
     # #########################################
-
-
-
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(5)

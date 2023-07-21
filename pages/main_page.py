@@ -33,3 +33,11 @@ class MainPage(Page):
         element = self.wait_for_element_appear(*self.SHIPPING_BTN)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
         element.click()
+
+    # footer links
+    # LINKS = (By.XPATH, "//ul[@class='footer-block__details-content list-unstyled']/li/a")
+    #
+    # all_links = self.find_elements(*self.LINKS)
+    # all_links = all_links[6:]
+    # for link in all_links:
+    #     link.click()
