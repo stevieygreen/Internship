@@ -13,7 +13,6 @@ from support.logger import logger, MyListener
 
 # Allure command:
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/product_page.feature
-# behave -f allure_behave.formatter:AllureFormatter -o features/ tests
 
 
 def browser_init(context, test_name):
@@ -24,17 +23,18 @@ def browser_init(context, test_name):
 
     # ########### CHROME ################
     options = ChromeOptions()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--start-maximized")
     context.driver = webdriver.Chrome(executable_path="chromedriver.exe", options=options)
     # ###################################
 
     ########### FIREFOX ################
+
     # options = FirefoxOptions()
     # options.headless = True
-    # options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe" #for allure
     # context.driver = webdriver.Firefox(executable_path="geckodriver.exe", options=options)
+
     ###################################
 
     # ########## BROWSERSTACK ################
